@@ -10,7 +10,14 @@ using System.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine.UI;
 
-public class BiomGenerator : MonoBehaviour
+public class BiomGenerator : BaseSingleton<BiomGenerator> , IBaseSingleton
 {
-    
+    public void OnCreateInstance()
+    {
+
+    }
+    public void OnDestroyInstance()
+    {
+        
+    }
 }

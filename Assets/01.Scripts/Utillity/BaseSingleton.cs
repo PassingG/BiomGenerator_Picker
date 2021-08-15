@@ -9,7 +9,7 @@ public interface IBaseSingleton
 public abstract class BaseSingleton<T> where T : class, IBaseSingleton, new()
 {
     private static T instance;
-    public static T Instance -> instance;
+    public static T Instance => instance;
 
     public static T CreateInstance()
     {
