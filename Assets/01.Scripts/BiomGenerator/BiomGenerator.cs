@@ -12,12 +12,17 @@ using UnityEngine.UI;
 
 public class BiomGenerator : BaseSingleton<BiomGenerator> , IBaseSingleton
 {
+    public void Initialize()
+    {
+        
+    }
+
     public void OnCreateInstance()
     {
 
     }
     public void OnDestroyInstance()
     {
-        
+
     }
 }
