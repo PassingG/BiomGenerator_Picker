@@ -10,18 +10,39 @@ using System.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine.UI;
 
-public class BiomGenerator : BaseSingleton<BiomGenerator> , IBaseSingleton
+public class BiomGenerator : BaseMonoSingleton<BiomGenerator>
 {
+    #region [ Function Class ]
+
+    
+
+    #endregion
+
+
+    #region [ Visible Property ]
+
+
+
+    #endregion
+
+
+    #region [ Private Property ]
+
+
+
+    #endregion
+
     public void Initialize()
     {
-        
-    }
 
-    public void OnCreateInstance()
+    }
+    
+    public void FirstBiomCreate()
     {
 
     }
-    public void OnDestroyInstance()
+
+    public void Release()
     {
 
     }

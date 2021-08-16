@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreSystem : MonoBehaviour
+public class CoreSystem : BaseMonoSingleton<CoreSystem>
 {
     // Call this function when this class is load.
     private void Awake()
@@ -19,7 +19,7 @@ public class CoreSystem : MonoBehaviour
 
     private void Release()
     {
-        BiomGenerator.DestroyInstance();
+        BiomGenerator.Instance.Release();
     }
 
     // Call this function when application is quit.
