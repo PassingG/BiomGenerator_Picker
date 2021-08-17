@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e34bb15b60637a49b949509d1c0f56b, type: 3}
+  m_Name: DefaultMap
+  m_EditorClassIdentifier: 
+  m_MapData:
+  - row: 020000000200000004000000
+  - row: 010000000000000004000000000000000000000000000000
+  - row: 010000000300000003000000000000000000000000000000000000000000000000000000
+  m_MapGridSize: {x: 3, y: 3}
+  m_Bioms:
+  - {fileID: 11400000, guid: f1589ce635613504295e6ee451967059, type: 2}
+  - {fileID: 11400000, guid: d4359c1931256cc40927054124a823b7, type: 2}
+  - {fileID: 11400000, guid: d03fde6482f465148b5649cd8a19a07c, type: 2}
+  - {fileID: 11400000, guid: b32af93d1ecb9164280e29daa45c6638, type: 2}
+  - {fileID: 11400000, guid: bd69096509d45ca4685af0b7e23fb081, type: 2}

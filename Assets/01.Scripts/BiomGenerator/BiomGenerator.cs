@@ -14,14 +14,18 @@ public class BiomGenerator : BaseMonoSingleton<BiomGenerator>
 {
     #region [ Function Class ]
 
-    
+    private BiomDisplay biomDisplay;
 
     #endregion
 
 
     #region [ Visible Property ]
 
-
+    [SerializeField]
+    private MapData startData;
+    
+    [SerializeField]
+    private Image mapImage;
 
     #endregion
 
@@ -34,7 +38,7 @@ public class BiomGenerator : BaseMonoSingleton<BiomGenerator>
 
     public void Initialize()
     {
-
+        biomDisplay.DisplayMap(mapImage, startData.GetMapCells());
     }
     
     public void FirstBiomCreate()

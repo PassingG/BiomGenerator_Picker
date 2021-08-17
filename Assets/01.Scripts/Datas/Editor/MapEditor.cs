@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEditor;
+using UnityEditorInternal;
 
 [CustomEditor(typeof(MapData))]
 public class MapEditor : Editor
@@ -20,23 +22,22 @@ public class MapEditor : Editor
     private Vector2 scrollPos;
     private Vector2 cellSize;
 
+    private ReorderableList reorderableList;
+
     #endregion
 
     #region [ Serialized Property ]
 
     protected SerializedProperty mapGridSize;
     protected SerializedProperty mapCells;
+    protected SerializedProperty biomDatas;
 
     #endregion
 
-
     void OnEnable()
     {
-        mapGridSize = serializedObject.FindProperty("m_MapGridSize");
-        mapCells = serializedObject.FindProperty("m_MapData");
-
-        newMapGridSize = mapGridSize.vector2IntValue;
-        cellSize = new Vector2(CellWidth, CellHeight);
+        PropertyInit();
+        ReorderableListInit();
     }
 
     public override void OnInspectorGUI()
@@ -45,8 +46,9 @@ public class MapEditor : Editor
         serializedObject.Update(); 
 
         EditorGUI.BeginChangeCheck();
-        
-        MapCellsEditor();
+
+        ShowMapCellsEditor();
+        ShowReorderableList();
 
         EditorGUI.EndChangeCheck();
 
@@ -54,8 +56,48 @@ public class MapEditor : Editor
         serializedObject.ApplyModifiedProperties(); 
     }
 
+    #region [ Initialize ]
+    private void PropertyInit()
+    {
+        mapGridSize = serializedObject.FindProperty("m_MapGridSize");
+        mapCells = serializedObject.FindProperty("m_MapData");
+        biomDatas = serializedObject.FindProperty("m_Bioms");
+
+        newMapGridSize = mapGridSize.vector2IntValue;
+        cellSize = new Vector2(CellWidth, CellHeight);
+    }
+
+    private void ReorderableListInit()
+    {
+        reorderableList = new ReorderableList(serializedObject, biomDatas, true, true, true, true);
+
+        // Set Header
+        reorderableList.drawHeaderCallback = (rect) =>
+                     EditorGUI.LabelField(rect, biomDatas.displayName);
+
+        // Element list size
+        reorderableList.drawElementCallback = (rect, index, isActive, isFocused) =>
+        {
+            var element = biomDatas.GetArrayElementAtIndex(index);
+            rect.height -= 4;
+            rect.y += 2;
+            EditorGUI.PropertyField(rect, element);
+        };
+
+        reorderableList.onRemoveCallback = (ReorderableList l) =>
+        {
+            if (EditorUtility.DisplayDialog("Warning!",
+                "Are you sure you want to delete the BiomData?", "Yes", "No"))
+            {
+                ReorderableList.defaultBehaviours.DoRemoveButton(l);
+            }
+        };
+    }
+#endregion
+
+    #region [ GUI Editors ]
     // MapCellLayoutView
-    private void MapCellsEditor()
+    private void ShowMapCellsEditor()
     {
         using (var h = new EditorGUILayout.HorizontalScope())
         {
@@ -108,9 +150,41 @@ public class MapEditor : Editor
 
         EditorGUILayout.Space();
 
-        DisplayMapGrid();
+        ShowMapGrid();
     }
 
+
+    private void ShowMapGrid()
+    {
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
+        {
+            for (var y = mapGridSize.vector2IntValue.y - 1; y >= 0; y--)
+            {
+                var row = GetRowAtMap(y);
+
+                using (var h = new EditorGUILayout.HorizontalScope())
+                {
+                    for (var x = 0; x < mapGridSize.vector2IntValue.x; x++)
+                    {
+                        EditorGUILayout.PropertyField(row.GetArrayElementAtIndex(x), GUIContent.none,
+                            GUILayout.Width(cellSize.x), GUILayout.Height(cellSize.y));
+                    }
+                }
+
+                GUILayout.Space(marginY);
+            }
+        }
+        EditorGUILayout.EndScrollView();
+    }
+    
+    protected void ShowReorderableList()
+    {
+        EditorGUILayout.Space(10);
+        reorderableList.DoLayoutList();
+    }
+#endregion
+
+    #region [ Other Function ]
     private void InitNewGridMap(Vector2Int newSize, bool clear = false)
     {
         mapCells.ClearArray();
@@ -131,30 +205,6 @@ public class MapEditor : Editor
         mapGridSize.vector2IntValue = newMapGridSize;
     }
 
-    private void DisplayMapGrid()
-    {
-        scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
-        {
-            Debug.Log(mapGridSize.vector2IntValue);
-            for (var y = mapGridSize.vector2IntValue.y - 1; y >= 0; y--)
-            {
-                var row = GetRowAtMap(y);
-
-                using (var h = new EditorGUILayout.HorizontalScope())
-                {
-                    for (var x = 0; x < mapGridSize.vector2IntValue.x; x++)
-                    {
-                        EditorGUILayout.PropertyField(row.GetArrayElementAtIndex(x), GUIContent.none,
-                            GUILayout.Width(cellSize.x), GUILayout.Height(cellSize.y));
-                    }
-                }
-
-                GUILayout.Space(marginY);
-            }
-        }
-        EditorGUILayout.EndScrollView();
-    }
-    
     protected SerializedProperty GetRowAtMap(int idx)
     {
         return mapCells.GetArrayElementAtIndex(idx).FindPropertyRelative("row");
@@ -171,5 +221,6 @@ public class MapEditor : Editor
             cell.intValue = clear ? 0 : previousCells[x, y];
         }
     }
+#endregion
 }
 

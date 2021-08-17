@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoreSystem : BaseMonoSingleton<CoreSystem>
 {
     // Call this function when this class is load.
-    private void Awake()
+    protected override void Awake()
     {
         StartCoroutine(Initialize());
     }
