@@ -269,9 +269,9 @@ MonoBehaviour:
   m_IsDontDestroyObject: 1
   startData: {fileID: 11400000, guid: 25b1077ab55ae1647abe1d717039f3f8, type: 2}
   mapImage: {fileID: 2072081861}
-  generateCount: 10
-  smoothCount: 10
-  displayingInterval: 0.07
+  generateCount: 0
+  smoothCount: 0
+  displayingInterval: 0.14
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

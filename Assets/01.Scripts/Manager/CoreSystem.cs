@@ -65,6 +65,12 @@ public class CoreSystem : BaseMonoSingleton<CoreSystem>
     {
         yield return new WaitUntil(() => isDoneInit == true);
 
+        if (m_BiomGenerator.TryShowMap(mapImage, startData.bioms, m_WorldMapData, m_WorldMapSize).Equals(false))
+        {
+            Debug.LogError("Cannot displaying biomData");
+            yield break;
+        }
+        
         for (int i = 0; i < generateCount; i++)
         {
             if (m_BiomGenerator.TryBiomGenerate(ref m_WorldMapData, ref m_WorldMapSize).Equals(false))
