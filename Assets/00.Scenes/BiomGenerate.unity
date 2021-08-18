@@ -271,7 +271,7 @@ MonoBehaviour:
   mapImage: {fileID: 2072081861}
   generateCount: 10
   smoothCount: 10
-  displayingInterval: 1
+  displayingInterval: 0.07
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

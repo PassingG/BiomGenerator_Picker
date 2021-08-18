@@ -218,7 +218,7 @@ public class MapEditor : Editor
 
         if (x < mapGridSize.vector2IntValue.x && y < mapGridSize.vector2IntValue.y)
         {
-            cell.intValue = clear ? 0 : previousCells[x, y];
+            cell.intValue = clear ? 0 : previousCells[y, x];
         }
     }
 #endregion
