@@ -36,19 +36,22 @@ public class MapData : ScriptableObject
     public BiomData[] bioms => m_Bioms;
     #endregion
 
+    /// <summary>
+    /// In a two-dimensional array, the order is y x, but the vector is x y.
+    /// </summary>
     public int[,] GetMapCells()
-    {
-        int[,] ret = new int[mapGridSize.x, mapGridSize.y];
+    {   
+        int[,] cell = new int[mapGridSize.y, mapGridSize.x];
 
         for (var y = 0; y < mapGridSize.y; y++)
         {
             for (var x = 0; x < mapGridSize.x; x++)
             {
-                ret[x, y] = GetMapRow(y)[x];
+                cell[y, x] = GetMapRow(y)[x];
             }
         }
 
-        return ret;
+        return cell;
     }
 
     public CellRow GetMapRow(int idx)
