@@ -14,7 +14,7 @@
  
  Interval Time : Visualize term.
 
- ## Guide
+ ## How to use?
  
  1.
  ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png)
@@ -36,8 +36,7 @@
  ![녹화_2021_08_20_17_22_25_278](https://user-images.githubusercontent.com/49996889/130203692-771c3a2e-9203-4cdd-9daf-612354b54d98.gif)
  
  
- ## Information
- 
+ ## Credits
  
  MyungHan Hyun
  
@@ -45,5 +44,6 @@
  
  https://github.com/PassingG/
  
+ ## License
  
- # MIT License.
+ MIT © MyungHanHyun
