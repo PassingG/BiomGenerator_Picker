@@ -46,4 +46,4 @@
  
  ## License
  
- MIT © MyungHanHyun
+ MIT © Wise
