@@ -11,11 +11,11 @@
  Interval Time : Visualize term.
 
  ##Guide
- 1. ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png)
+ 1. ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png)\n
 Create BiomData and MapData
- 2. ![image](https://user-images.githubusercontent.com/49996889/130202814-adeb098a-91cd-47d1-8a62-ca08d71ad258.png)
+ 2. ![image](https://user-images.githubusercontent.com/49996889/130202814-adeb098a-91cd-47d1-8a62-ca08d71ad258.png)\n
  Set those data.
- 3. ![image](https://user-images.githubusercontent.com/49996889/130203037-c7c51489-d094-4f8f-8d27-df56d8bcd400.png)
+ 3. ![image](https://user-images.githubusercontent.com/49996889/130203037-c7c51489-d094-4f8f-8d27-df56d8bcd400.png)\n
  You can control data.
  
  ##Example
