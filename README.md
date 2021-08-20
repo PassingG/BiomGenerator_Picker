@@ -5,10 +5,13 @@
  Use Burst, JobSystem for fast generating biom.
  
  
- ##In CoreSystem has Generate count, Smooth Count, Interval Time.
+ ###In CoreSystem has Generate count, Smooth Count, Interval Time.
+ 
  
  Generate Count : How many upscailing biomMap.
+ 
  Smooth Count : How many smooth algorithm will play.
+ 
  Interval Time : Visualize term.
 
  ##Guide
@@ -35,8 +38,11 @@
  
  ##Information
  
+ 
  MyungHan Hyun
+ 
  hmh9534@gmail.com
+ 
  https://github.com/PassingG/
  
  
