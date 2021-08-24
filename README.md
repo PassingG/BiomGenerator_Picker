@@ -17,23 +17,23 @@
  ## How to use?
  
  1.
- ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png)
+ ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png){: width="300"}
  
  Create BiomData and MapData
  
  2.
- ![image](https://user-images.githubusercontent.com/49996889/130202814-adeb098a-91cd-47d1-8a62-ca08d71ad258.png)
+ ![image](https://user-images.githubusercontent.com/49996889/130202814-adeb098a-91cd-47d1-8a62-ca08d71ad258.png){: width="300"}
  
  Set those data.
  
  3. 
- ![image](https://user-images.githubusercontent.com/49996889/130203037-c7c51489-d094-4f8f-8d27-df56d8bcd400.png)
+ ![image](https://user-images.githubusercontent.com/49996889/130203037-c7c51489-d094-4f8f-8d27-df56d8bcd400.png){: width="300"}
  
  You can control data.
  
  ## Example
  
- ![녹화_2021_08_20_17_22_25_278](https://user-images.githubusercontent.com/49996889/130203692-771c3a2e-9203-4cdd-9daf-612354b54d98.gif)
+ ![녹화_2021_08_20_17_22_25_278](https://user-images.githubusercontent.com/49996889/130203692-771c3a2e-9203-4cdd-9daf-612354b54d98.gif){: width="300"}
  
  
  ## Credits
