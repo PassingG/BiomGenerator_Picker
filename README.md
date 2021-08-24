@@ -1,5 +1,5 @@
-# BiomGenerator_Picker
- BiomGenerator System!
+# BiomeGenerator_Picker
+ Biome Generator System!
  Made with Unity 2020.3.14f1
  
  Use Burst, JobSystem for fast generating biom.
@@ -8,7 +8,7 @@
  ### In CoreSystem has Generate count, Smooth Count, Interval Time.
  
  
- Generate Count : How many upscailing biomMap.
+ Generate Count : How many upscailing biomeMap.
  
  Smooth Count : How many smooth algorithm will play.
  
@@ -19,7 +19,7 @@
  1.
  <img src = "https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png" width="500">
  
- Create BiomData and MapData
+ Create BiomeData and MapData
  
  2.
  <img src = "https://user-images.githubusercontent.com/49996889/130202814-adeb098a-91cd-47d1-8a62-ca08d71ad258.png" width="500">
