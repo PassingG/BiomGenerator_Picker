@@ -17,7 +17,8 @@
  ## How to use?
  
  1.
- ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png){: width="80%" height="80%"}
+ <img src = "https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png" width="300">
+ ![image](https://user-images.githubusercontent.com/49996889/130202920-3c8c4826-7642-4c8f-9eda-a367b26582a5.png)
  
  Create BiomData and MapData
  
